@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, image-scale=1.0">
+        <title>C++ Documentation</title>
+        <link rel="stylesheet" href="c++.css" >
+        <script src="https://kit.fontawesome.com/39f3f4fa82.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav id="navbar">
+            <header><a href="first_file.html"><i class="fas fa-house"></i>Home</a></header>
+            <header>C++ Documentation</header>
+            <ul>
+                <li class="Introducere"><a href="#Introducere">Introduction</a></li>
+                <li><a href="#Sintaxa">Syntax</a></li>
+                <li><a href="#Variabile">Variables</a></li>
+                <li><a href="#Tipuri de date">Data Types</a></li>
+                <li class="dropdown">
+                    <a href="#Instructiuni">Instructions</a>
+                    <div class="dropdown-content">
+                        <a href="#The if Statement">The if  Statement</a>
+                        <a href="#The else  Statement">The else  Statement</a>
+                        <a href="#The else if Statement">The else if Statement</a>
+                        <a href="#C++ While Loop">C++ While Loop</a>
+                        <a href="#C++ Do/While Loop">C++ Do/While Loop</a>
+                        <a href="#C++ For Loop">C++ For Loop</a>
+                        <a href="#Nested Loops">Nested Loops</a>
+                        <a href="#C++ Switch Statements">C++ Switch Statements</a> 
+                       </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#C++ Operators">Operators</a>
+                    <div class="dropdown-content">
+                        <a href="#Arithmetic Operators">Arithmetic</a>
+                        <a href="#Assignment Operators">Assignment</a>
+                        <a href="#Comparison Operators">Comparison</a>
+                        <a href="#Logical Operators">Logical</a>
+                       </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#C++ Strings">C++ Strings</a>
+                    <div class="dropdown-content">
+                        <a href="#Strings">Strings</a>
+                        <a href="#String Concatenation">String Concatenation</a>
+                        <a href="#String Length">String Length</a>
+                        <a href="#Access Strings">Access Strings</a>
+                        <a href="#User Input Strings">User Input Strings</a>
+                    </div>
+                </li>
+                <li><a href="#C++ Math">C++ Math</a></li>
+                <li><a href="#C++ Structures">Structuri</a></li>
+                <li><a href="#Reference">Refrence</a></li>
+                <li><a href="D:\visual studio\proiecte\special\exercises\index.html">Quiz</a></li>
+                <li><a href="http://localhost/ide/ui/ide.html">Compiler</a></li>
+                <li>
+                    <style>
+                        .overlay {
+                          height: 0%;
+                          width: 100%;
+                          position: fixed;
+                          z-index: 1;
+                          top: 0;
+                          left: 0;
+                          background-color: rgb(0,0,0);
+                          background-color: rgba(0,0,0, 0.9);
+                          overflow-y: hidden;
+                          transition: 0.5s;
+                        }
+                        
+                        .overlay-content {
+                          position: relative;
+                          top: 25%;
+                          width: 100%;
+                          text-align: center;
+                          margin-top: 30px;
+                        }
+                        
+                        .overlay a {
+                          padding: 8px;
+                          text-decoration: none;
+                          font-size: 36px;
+                          color: #818181;
+                          display: block;
+                          transition: 0.3s;
+                        }
+                        
+                        .overlay a:hover, .overlay a:focus {
+                          color: #f1f1f1;
+                        }
+                        
+                        .overlay p {
+                          padding: 8px;
+                          text-decoration: none;
+                          font-size: 36px;
+                          color: #818181;
+                          display: block;
+                          transition: 0.3s;
+                        }
+                        
+                        .overlay p:hover, .overlay a:focus {
+                          color: #f1f1f1;
+                        }
+                        
+                        .overlay .closebtn {
+                          position: absolute;
+                          top: 20px;
+                          right: 45px;
+                          font-size: 60px;
+                        }
+                        
+                        @media screen and (max-height: 450px) {
+                          .overlay {overflow-y: auto;}
+                          .overlay a {font-size: 20px}
+                          .overlay .closebtn {
+                          font-size: 40px;
+                          top: 15px;
+                          right: 35px;
+                          }
+                        }
+                        
+                        * {box-sizing: border-box}
+                        body {font-family: Verdana, sans-serif; margin:0}
+                        .mySlides {display: none}
+                        img {vertical-align: middle;}
+                        
+                        /* Slideshow container */
+                        .slideshow-container {
+                          max-width: 1000px;
+                          position: relative;
+                          margin: auto;
+                        }
+                        
+                        /* Next & previous buttons */
+                        .prev, .next {
+                          cursor: pointer;
+                          position: absolute;
+                          top: 50%;
+                          width: auto;
+                          padding: 16px;
+                          margin-top: -22px;
+                          color: white;
+                          font-weight: bold;
+                          font-size: 18px;
+                          transition: 0.6s ease;
+                          border-radius: 0 3px 3px 0;
+                          user-select: none;
+                        }
+                        
+                        /* Position the "next button" to the right */
+                        .next {
+                          right: 0;
+                          border-radius: 3px 0 0 3px;
+                        }
+                        
+                        /* On hover, add a black background color with a little bit see-through */
+                        .prev:hover, .next:hover {
+                          background-color: rgba(0,0,0,0.8);
+                        }
+                        
+                        /* Caption text */
+                        .text {
+                          color: #f2f2f2;;
+                          font-size: 15px;
+                          padding: 8px 12px;
+                          position: absolute;
+                          bottom: 8px;
+                          width: 100%;
+                          text-align: center;
+                        }
+                        
+                        .text2 {
+                          color:  #1a1a1a;
+                          font-size: 15px;
+                          padding: 8px 12px;
+                          position: absolute;
+                          bottom: 8px;
+                          width: 100%;
+                          text-align: center;
+                        }
+                        
+                        /* Number text (1/3 etc) */
+                        .numbertext {
+                          color: #f2f2f2;
+                          font-size: 12px;
+                          padding: 8px 12px;
+                          position: absolute;
+                          top: 0;
+                        }
+
+                        .numbertext2 {
+                          color: #1a1a1a;
+                          font-size: 12px;
+                          padding: 8px 12px;
+                          position: absolute;
+                          top: 0;
+                        }
+                        
+                        /* The dots/bullets/indicators */
+                        .dot {
+                          cursor: pointer;
+                          height: 15px;
+                          width: 15px;
+                          margin: 0 2px;
+                          background-color: #bbb;
+                          border-radius: 50%;
+                          display: inline-block;
+                          transition: background-color 0.6s ease;
+                        }
+                        
+                        .active, .dot:hover {
+                          background-color: #717171;
+                        }
+                        
+                        /* Fading animation */
+                        .fade {
+                          animation-name: fade;
+                          animation-duration: 1.5s;
+                        }
+                        
+                        @keyframes fade {
+                          from {opacity: .4} 
+                          to {opacity: 1}
+                        }
+                        
+                        /* On smaller screens, decrease text size */
+                        @media only screen and (max-width: 300px) {
+                          .prev, .next,.text {font-size: 11px}
+                        }
+                        
+                        </style>
+                    <div id="myNav" class="overlay">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div class="overlay-content">
+                          <p>Poza cu codul si surse de inspiratie=))</p>
+                          <div class="slideshow-container">
+                      <div class="mySlides fade">
+                        <div class="numbertext">1 / 5</div>
+                        <img src="html.png" style="width:100%">
+                        <div class="text">Cateva lini de cod din codul html</div>
+                      </div>
+                      
+                      <div class="mySlides fade">
+                        <div class="numbertext">2 / 5</div>
+                        <img src="css.png" style="width:100%">
+                        <div class="text">Cateva lini de cod din codul css pentru stilizare</div>
+                      </div>
+                      
+                      <div class="mySlides fade">
+                        <div class="numbertext2">3 / 5</div>
+                        <img src="w3schools.png" style="width:100%">
+                        <div class="text2">Ideie luata de pe w3schools #1</div>
+                      </div>
+                      
+                      <div class="mySlides fade">
+                        <div class="numbertext2">4 / 5</div>
+                        <img src="w3schools2.png" style="width:100%">
+                        <div class="text2">Ideie luata de pe w3schools #2</div>
+                        </div>
+                      
+                      <div class="mySlides fade">
+                        <div class="numbertext2">5 / 5</div>
+                        <img src="freecodecamp.png" style="width:100%">
+                        <div class="text2">Ideie luata de pe freecodecamp</div>
+                      </div>
+                      
+                      <a class="prev" onclick="plusSlides(-1)">❮</a>
+                      <a class="next" onclick="plusSlides(1)">❯</a>
+                      
+                      </div>
+                      <br>
+                      
+                      <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span> 
+                        <span class="dot" onclick="currentSlide(2)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span> 
+                        <span class="dot" onclick="currentSlide(5)"></span>  
+                      </div>
+                        </div>
+                      </div>
+                      
+                      <span style="cursor:pointer" onclick="openNav()"> Ceva special</span>
+                      <br>
+                      
+                      <script>
+                      function openNav() {
+                        document.getElementById("myNav").style.height = "100%";
+                      }
+                      
+                      function closeNav() {
+                        document.getElementById("myNav").style.height = "0%";
+                      }
+                      
+                      function openNav2() {
+                        document.getElementById("myNav2").style.height = "100%";
+                      }
+                      
+                      function closeNav2() {
+                        document.getElementById("myNav2").style.height = "0%";
+                      }
+                      
+                      let slideIndex = 1;
+                      showSlides(slideIndex);
+                      
+                      function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                      }
+                      
+                      function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                      }
+                      
+                      function showSlides(n) {
+                        let i;
+                        let slides = document.getElementsByClassName("mySlides");
+                        let dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) {slideIndex = 1}    
+                        if (n < 1) {slideIndex = slides.length}
+                        for (i = 0; i < slides.length; i++) {
+                          slides[i].style.display = "none";  
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                          dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex-1].style.display = "block";  
+                        dots[slideIndex-1].className += " active";
+                      }
+                      </script>
+                </li>
+            </ul>
+        </nav>
+        <div id="title-bar">
+            <h1>C++ Learning Page</h1>
+            <nav id="titlebar">
+                <ul>
+                    <li>For contact:</li>
+                    <li><a href="https://www.instagram.com/alex.barnu/">@alex.barnu</a></li>
+                </ul>
+            </nav>
+        </div>
+        <main class="information">
+            <section class="main-section" id="Introducere">
+                <header>Introduction</header>
+                <article>
+                    <p>                        
+                            C++, a versatile and cross-platform programming language, stands as a powerful tool for crafting high-performance applications. Originating as an extension to the venerable C language, C++ was meticulously developed by Bjarne Stroustrup.
+                            <br>
+                            This language provides programmers with an unparalleled level of control over system resources and memory, contributing to its status as one of the most widely embraced programming languages globally. The essence of C++ is woven into the fabric of contemporary operating systems, Graphical User Interfaces (GUIs), and embedded systems, attesting to its ubiquitous presence in modern computing.
+                            <br>
+                            One of the standout features of C++ is its object-oriented nature, offering a structured approach to programming that facilitates code reuse and ultimately reduces development costs. The portability of C++ is a hallmark, allowing developers to create applications that seamlessly adapt to multiple platforms, enhancing their reach and accessibility.
+                            <br>
+                            What sets C++ apart is not only its technical prowess but also its accessibility. Despite its power, C++ manages to be both enjoyable and easy to learn, making it an enticing choice for aspiring and seasoned programmers alike. In the hands of developers, C++ unfolds as a dynamic language capable of breathing life into a myriad of applications, embodying the perfect blend of efficiency and user-friendly design.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="Sintaxa">
+                <header id="Sintaxa">Syntax</header>
+                <article>
+                    <p>Let's break up the following code to understand it better:</p>
+                    <div class="code">
+                        <code>
+                            #include <iostream>
+                            <br>
+                            using namespace std;
+                            <br>
+                            int main() {
+                            <br>
+                            &nbsp;&nbsp;cout << <span style="color:brown"> "Hello World!"</span>;
+                            <br>
+                            &nbsp;&nbsp;<span style="color:blue">return <span style="color:red">0</span>;
+                            <br>
+                            }
+                        </code>
+                    </div>
+                        <p>Example explained</p>
+                        <p id="inline"><strong>Line 1:</strong> <div class="code2">&nbsp;&nbsp;<code><span stytle="color: red">#include <iostream></span></code></div> is a header file library that lets us work with input and output objects, such as <div class="code2"><code><span style="color: red;">cout</span></code></div> (used in line 5). Header files add functionality to C++ programs.</p>
+                        <p id="inline"><strong>Line 2:</strong><div class="code2"><code><span style="color:red;">using namespace std</span></code></div> means that we can use names for objects and variables from the standard library.</p>
+                        <p></p><strong>Line 3:</strong>A blank line. C++ ignores white space. But we use it to make the code more readable.></p>  
+                        <p id="inline"><strong>Line 4:</strong>Another thing that always appear in a C++ program, <div class="code2" id="inline"><code><span style="color:red;">int main()</span></code></div>. This is called a <strong>function</strong>. Any code inside its curly brackets <div class="code2"><code><span style="color:red;">{}</span></code></div> will be executed.</p> 
+                        <p id="inline"><strong>Line 5:</strong><div class="code2"><code><span style="color:red;">cout</span></code></div> (pronounced "see-out")is an <strong>object</strong> used together with the <i>insertion operator</i> (<div class="code2"><code><span style="color:red;"><<</span></code></div>) to output/print text. In our example it will output "Hello World!".</p> 
+                        <p id="inline"><strong>Note:</strong>Every C++ statement ends with a semicolon <div class="code2" ><code><span style="color:red;">;</span></code></div></p> 
+                        <p id="inline"><strong>Note:</strong> The body of <div class="code2"><code><span style="color:red">int main()</span></code></div>could also been written as:</p>
+                        <p><div class="code2"><code><span style="color:red">int main () { cout << "Hello World! "; return 0; }</span></code></div></p>
+                        <p><strong>Remember:</strong> The compiler ignores white spaces. However, multiple lines makes the code more readable.</p>  
+                        <p id="inline"><strong>Line 6: </strong><div class="code2"><code><span style="color:red">return 0</span></code></div> ends the main function.</p>  
+                        <p id="inline"><strong>Line 7:</strong> Do not forget to add the closing curly bracket <div class="code2"><code><span style="color:red">}</span></span></code></div> to actually end the main function.</p>                
+                    </article>
+            </section>
+            <section  class="main-section">
+                <header id="Variabile">Variabile</header>
+                    <article>
+                        <p>Variables are containers for storing data values.</p>
+                        <br>
+                        <p>In C++, there are different <strong>types</strong> of variables (defined with different keywords), for example:</p>
+                        <br>
+                        <ul>
+                            <li><div class="code2"><code><span style="color:red">int</span></code></div>- stores integers (whole numbers), without decimals, such as 123 or -123</li>
+                            <li><div class="code2"><code><span style="color:red">double</span></code></div> - stores floating point numbers, with decimals, such as 19.99 or -19.99</li>
+                            <li><div class="code2"><code><span style="color:red">string</span></code></div> - stores text, such as "Hello World". String values are surrounded by double quotes</li>
+                            <li><div class="code2"><code><span style="color:red">bool</span></code></div>- stores values with two states: true or false</li>
+                        </ul>
+                    </article>
+                <h2>Declaring (Creating) Variables</h2>
+                    <article>
+                        <p>To create a variable, specify the type and assign it a value:</p>
+                        <br>
+                        <h3><strong>Syntax</strong></h3>
+                        <p><div class="code"><code><span style="color:red"><i>type variableName = value;</i></span></code></div></p>
+                        <p id="inline">Where type is one of C++ types (such as <div class="code2"><code><span style="color:red">int</span></code></div>), and variableName is the name of the variable (such as <strong>x</strong> or <strong>myName</strong>). The <strong>equal sign</strong> is used to assign values to the variable.</p>
+                        <p>To create a variable that should store a number, look at the following example:</p>
+                        <h3>Example</h3>
+                        <p id="inline">Create a variable called <strong>myNum</strong> of type <div class="code2"><code><span style="color:red">int</span></code></div> and assign it the value <strong>15</strong>:</p>
+                        <p><div class="code">
+                            <code>
+                                <span style="color: blue;">int</span> myNum = 15;
+                                <br>
+                                cout << myNum;
+                            </code>
+                        </div>
+                        </p>
+                        <br>
+                        <p>You can also declare a variable without assigning the value, and assign the value later:</p>
+                        <div class="code">
+                            <code>
+                                <span style="color:blue">int</span> myNum;
+                                <br>
+                                myNum = <span style="color:red">15</span>; 
+                                <br>
+                                cout << myNum;
+                            </code>
+                        </div>
+                        <br>
+                        <p>Note that if you assign a new value to an existing variable, it will overwrite the previous value:</p>
+                        <h3>Example</h3>
+                        <div class="code">
+                            <code>
+                                <span style="color:blue">int</span> myNum = <span style="color:red">15</span>; <span style="color:green"> // myNum is 15</span>
+                                <br>
+                                myNum = <span style="color:red">10</span>;  <span style="color:green">// Now myNum is 10</span>
+                                <br>
+                                cout << myNum;  <span style="color:green">// Outputs 10</span>
+                            </code>
+                        </div>
+                        <h3>Display Variables</h3>
+                        <p id="inline">The <div class="code2"><code><span style="color: red;">cout</span></code></div> object is used together with the <div class="code2"><code><span style="color:red"><<</span></code></div> operator to display variables.</p>
+                        <h3>Example</h3>
+                        <div class="code">
+                           <code>
+                            <span style="color:red">int</span> myAge = <span style="color:red">35</span>;
+                            <br>
+                            cout <span style="color:red"><<</span> "I am " <span style="color:red"><<</span> myAge <span style="color:red"><<</span> " years old.";
+                           </code> 
+                        </div>
+                        <h3>Add Variables Together</h3>
+                        <p id="inline">To add a variable to another variable, you can use the <div class="code2"><code><span style="color:red">+</span></code></div> operator:</p>
+                        <h3>Example</h3>
+                        <div class="code">
+                            <code>
+                                <span style="color:blue">int</span> x = <span style="color:red">5</span>;
+                                <br>
+                                <span style="color:blue">int</span> y = <span style="color:red">6</span>;
+                                <br>
+                                <span style="color:blue">int</span> sum = x + y;
+                                <br>
+                                cout << sum;
+                            </code>
+                        </div>
+                    </article>
+            </section>
+            <section class="main-section">
+                <header id="Tipuri de date">Data Types</header>
+                <article>
+                    <p>As explained in the <a href="#Variabile">Variables</a> chapter, a variable in C++ must be a specified data type:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color:blue">int</span> myNum = <span style="color:red"></span>; <span style="color:green">// Integer (whole number)</span>
+                            <br>
+                            <span style="color:blue">float</span> myFloatNum = <span style="color:red">5.99</span>;     <span style="color:green">// Floating point number</span>
+                            <br>
+                            <span style="color:blue">double</span> myDoubleNum = <span style="color:red">9.98</span>;   <span style="color:green">// Floating point number</span>
+                            <br>
+                            <span style="color:blue">char</span> myLetter = <span style="color:orangered">'D'</span>;   <span style="color:green">// Character</span>
+                            <br>
+                            bool myBoolean = <span style="color:blue">true</span>;       <span style="color:green">// Boolean</span>
+                            string myText = <span style="color:orangered">"Hello"</span>;     <span style="color:green">// String</span>
+                        </code>
+                    </div>
+                    <br>
+                    <h3>Basic Data Types</h3>
+                    <p>The data type specifies the size and type of information the variable will store:</p>
+                    <table class="example-data-types">
+                        <thead>
+                            <tr>
+                                <th style="width:15%">Data Type</th>
+                                <th style="width:15%">Size</th>
+                                <th style="width:70%">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code><span style="color:red">boolean</span></code></td>
+                                <td>1 byte</td>
+                                <td>Stores true or false values</td>
+                            </tr>
+                            <tr>
+                                <td><code><span style="color:red">char</span></code></td>
+                                <td>1 byte</td>
+                                <td>Stores a single character/letter/number, or ASCII values</td>
+                            </tr>
+                            <tr>
+                                <td><span style="color:red">int</span></td>
+                                <td>2 or 4 bytes</td>
+                                <td>Stores whole numbers, without decimals</td>
+                            </tr>
+                            <tr>
+                                <td><span style="color:red">float</span></td>
+                                <td>4 bytes</td>
+                                <td>Stores fractional numbers, containing one or more decimals. Sufficient for storing 6-7 decimal digits</td>
+                            </tr>
+                            <tr>
+                                <td><span style="color:red">double</span></td>
+                                <td>8 bytes</td>
+                                <td>Stores fractional numbers, containing one or more decimals. Sufficient for storing 15 decimal digits</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+            <section class="main-section">
+                <header id="Instructiuni">Instructiuni</header>
+                <article>
+                    <h3>C++ If ... Else</h3>
+                    <p>C++ has the following conditional statements:</p>
+                    &nbsp;<ul>
+                        <li>Use<div class="code2"><code><span style="color:red">if</span></code></div>to specify a block of code to be executed, if a specified condition is true</li>
+                        <li>Use <div class="code2"><code><span style="color:red">else</span></code></div> to specify a block of code to be executed, if the same condition is false</li>
+                        <li>Use <div class="code2"><code><span style="color:red">else if</span></code></div> to specify a new condition to test, if the first condition is false</li>
+                    </ul>
+                    <h3 id="The if Statement">The if Statement</h3>
+                    <p id="inline">Use the <div class="code2"><code><span style="color:red">if</span></code></div> statement to specify a block of C++ code to be executed if a condition is <div class="code2"><code><span style="color: red;">true</span></code></div>.</p>
+                    <h3>Syntax</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color:red">if</span> (condition) {
+                                <br>
+                                &nbsp;<span style="color:green"> // block of code to be executed if the condition is true</span>
+                                <br>
+                            }
+                    </code>
+                </div>
+                <p>In the example below, we test two values to find out if 20 is greater than 18. If the condition is <div class="code2"><code><span style="color:red">true</span></code></div> print some text:</p>
+                <h3>Example</h3>
+                <div class="code">
+                    <code>
+                        <span style="color:blue">if</span> (<span style="color:red">20</span> > <span style="color:red">18</span>) {
+                            <br>
+                            &nbsp;cout << <span style="color:brown">"20 is greater than 18"</span>;
+                            <br>
+                          }
+                    </code>
+                </div>
+                <p>You can also test variables:</p>
+                <h3>Example</h3>
+                <div class="code">
+                    <code>
+                        <span style="color:blue">int</span> x = <span style="color:red">20</span>;
+                        <br>
+                        <span style="color:blue">int</span> y = <span style="color:red">18</style>;
+                        <br>
+                        <span style="color:blue">if</span> (x > y) {
+                            <br>
+                            &nbsp;cout << <span style="color:brown">"x is greater than y"</span>;
+                        }
+                    </code>
+                </div>
+                <h3 id="The else  Statement">The else  Statement</h3>
+                <p>Use the <code><span style="color:red">else</span></code> statement to specify a block of code to be executed if the condition is <code><span style="color:red">false</span></code>.</p>
+                <h3>Syntax</h3>
+                <div class="code">
+                    <code>
+                        <span style="color:blue">if</span>(condition) {
+                            <br>
+                            &nbsp; <span style="color:green">// block of code to be executed if the condition is true</span>
+                            <br>
+                        } <span style="color:blue">else </span>{
+                            <br>
+                            &nbsp;<span style="color:green"> // block of code to be executed if the condition is false</span>
+                            <br>
+                          }
+                    </code>
+                </div>
+                <h3>Example</h3>
+                <div class="code">
+                    <code>
+                        <span style="color:blue">int</span> time = <span style="color:red">20</span>;
+                        <br>
+                        <span style="color:blue">if</span> (time < <span>18</span>) {
+                            <br>
+                            &nbsp;cout << <span style="color:brown">"Good day."</span>;
+                        <br>
+                        } else {
+                            <br>
+                            &nbsp;cout << <span style="color:brown">"Good evening."</span>;
+                            <br>
+                        }
+                        <br>
+                        <span style="color:green">// Outputs "Good evening."</span>
+                    </code>
+                </div>
+                <h3 id="The else if Statement">The else if Statement</h3>
+                <p>Use the <div class="code2"><code><span style="color:red">else if</span></code></div> statement to specify a new condition if the first condition is <div class="code2"><code><span style="color:red">false</span></code></div>.</p>
+                <h3>Syntax</h3>
+                <div class="code">
+                    <code>
+                        <span style="color: blue;">if </span>(condition1) {
+                            <br>
+                            &nbsp;<span style="color:green">// block of code to be executed if condition1 is true</span>
+                            <br>
+                        } <span style="color: blue;">else if</span> (condition2) {
+                            <br>
+                            &nbsp;<span style="color: green;">// block of code to be executed if the condition1 is false and condition2 is true</span>
+                            <br>
+                        } <span style="color: blue;">else</span> {
+                            <br>
+                            &nbsp;<span style="color: green;">// block of code to be executed if the condition1 is false and condition2 is false</span>
+                          }
+                    </code>
+                </div>
+                <h3>Example</h3>
+                <div class="code">
+                    <code>
+                        <span style="color: blue;">int</span> time = <span style="color: red;">22</span>;
+                        <br>
+                        <span style="color: blue;">if</span> (time < <span style="color:red">10</span>) {
+                            <br>
+                        &nbsp;cout << <span style="color:brown">"Good morning."</span>;
+                        <br>
+                        } <span style="color: blue;">else if</span> (time < <span style="color:red">20</span>) {
+                            <br>
+                            &nbsp;cout << <span style="color:brown">"Good day."</span>;
+                            <br>
+                        } <span style="color: blue;">else</span> {
+                            <br>
+                        &nbsp;cout << <span style="color:brown">"Good evening."</span>;
+                        <br>
+                        }
+                        <br>
+                        &nbsp;<span style="color:green">// Outputs "Good evening."</span>
+                    </code>
+                </div>
+                <h3 id="C++ While Loop">C++ While Loop</h3>
+                <p>Loops can execute a block of code as long as a specified condition is reached.</p>
+                <p id="inline">The <div class="code2"><code><span style="color: red;">while</span></code></div> loop loops through a block of code as long as a specified condition is <div class="code2"><code><span style="color: red;">true</span></code></div>:</p>
+                <h3>Syntax</h3>
+                <div class="code">
+                    <code>
+                        <span style="color:blue">while</span> (condition) {
+                            <br>
+                            &nbsp;<span style="color: green;">// code block to be executed</span>
+                            <br>
+                          }
+                    </code>
+                </div>
+                <p id="inline">In the example below, the code in the loop will run, over and over again, as long as a variable (<div class="code2"><code><span style="color: red;">i</span></code></div>) is less than 5:</p>
+                <h3>Example</h3>
+                <div class="code">
+                    <code>
+                        <span style="color: blue">int</span> i = <span style="color: red;">0</span>;
+                        <br>
+                        <span style="color:blue">while</span> (i < <span style="color: red">5</span>) {
+                            <br>
+                        &nbsp;cout << i << <span style="color:brown">"\n"</span>;
+                        <br>
+                        &nbsp;i++;
+                        <br>
+                        }
+                    </code>
+                </div>
+                <h3 id="C++ Do/While Loop">C++ Do/While Loop</h3>
+                    <p id="inline">The <div class="code2"><code><span style="color: red;">do/while</span></code></div> loop is a variant of the <div class="code2"><code><span style="color:red">while</span></code></div> loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.</p>
+                    <h3>Syntax</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color: blue;">do</span> {
+                                <br>
+                               &nbsp;<span style="color:green">// code block to be executed</span>
+                               <br>
+                              }
+                              <br>
+                              <span style="color:green">while</span>(condition);
+                        </code>
+                    </div>
+                    <p id="inline">The example below uses a <div class="code2"><code><span style="color:red">do/while</span></code></div> loop. The loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color:blue">int</span> i = <span style="color:red">0</span>;
+                            <br>
+                            <span style="color:blue">do</span> {
+                                <br>
+                                &nbsp;cout << i << <span style="color:brown">"\n"</span>;
+                                <br>
+                                &nbsp;i++;
+                                <br>
+                            }
+                            <br>
+                            <span style="color:blue">while</span> (i < <span style="color:red">5</span>);
+                        </code>
+                    </div>
+                    <h3 id="C++ For Loop">C++ For Loop</h3>
+                    <p id="inline">When you know exactly how many times you want to loop through a block of code, use the <div class="code2"><code><span style="color: red;">for</span></code></div> loop instead of a <div class="code2"><code><span style="color: red;">while</span></code></div> loop:</p>
+                    <h3>Syntax</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color: blue;">for</span> (statement 1; statement 2; statement 3) {
+                                <br>
+                                &nbsp;<span style="color: green;">// code block to be executed</span>
+                                <br>
+                              }
+                        </code>
+                    </div>
+                    <p><strong>Statement 1</strong> is executed (one time) before the execution of the code block.</p>
+                    <p><strong>Statement 2</strong> defines the condition for executing the code block.</p>
+                    <p><strong>Statement 3</strong> is executed (every time) after the code block has been executed.</p>
+                    <p>The example below will print the numbers 0 to 4:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color:blue">for</span> (int i = <span style="color: red;">0</span>; i < <span style="color:red">5</span>; i++) {
+                                <br>
+                                &nbsp;cout << i << <span style="color:brown">"\n"</span>;
+                                <br>
+                              }
+                        </code>
+                    </div>
+                    <p><strong>Example explained</strong></p>
+                    <p>Statement 1 sets a variable before the loop starts (int i = 0).</p>
+                    <p>Statement 2 defines the condition for the loop to run (i must be less than 5). If the condition is true, the loop will start over again, if it is false, the loop will end.</p>
+                    <p>Statement 3 increases a value (i++) each time the code block in the loop has been executed.</p>
+                    <h3>Another Example</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color: blue;">for</span> (<span style="color: blue;">int</span> i = <span style="color: red;">0</span>; i <= <span style="color:red">10</span>; i = i + <span style="color: red;">2</span>) {
+                                <br>
+                                &nbsp;cout << i << <span style="color:brown">"\n"</span>;
+                                <br>
+                              }
+                        </code>
+                    </div>
+                    <h3 id="Nested Loops">Nested Loops</h3>
+                    <p>It is also possible to place a loop inside another loop. This is called a <strong>nested loop</strong>.</p>
+                    <p>The "inner loop" will be executed one time for each iteration of the "outer loop":</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color: green;">// Outer loop</span>
+                            <br>
+                            <span style="color:blue">for</span> (<span style="color: blue;">int</span> i = <span style="color:red">1</span>; i <= <span>2</span>; ++i) {
+                                <br>
+                                &nbsp;&nbsp;cout << <span style="color:brown">"Outer: "</span> << i << <span style="color:brown">"\n"</span>; <span style="color: green;">// Executes 2 times</span>
+                                <br>
+                                <br>
+                            <span style="color: green;">// Inner loop</span>
+                            <br>
+                            <span style="color:blue">for</span> (<span style="color:blue">int</span> j = <span style="color:red">1</span>; j <= <span style="color:red">3</span>; ++j) {
+                                <br>
+                                 &nbsp;&nbsp;cout << <span style="color:brown">" Inner: "</span> << j << <span style="color:brown">"\n"</span>; <span style="color:green">// Executes 6 times (2 * 3)</span>
+                                 <br>
+                                 &nbsp;&nbsp;}
+                                <br>
+                            }
+                        </code>
+                    </div>
+                    <h3 id="C++ Switch Statements">C++ Switch Statements</h3>
+                    <p id="inline">Use the <div class="code2"><code><span style="color: red;">switch</span></code></div> statement to select one of many code blocks to be executed.</p>
+                    <h3>Syntax</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color: blue;">switch</span>(expression) {
+                                <br>
+                                &nbsp;&nbsp;<span style="color: blue;">case</span> x:
+                                <br>
+                                &nbsp;&nbsp;&nbsp;<span style="color:green">// code block</span>
+                                <br>
+                                &nbsp;&nbsp;&nbsp;<span style="color: blue;">break</span>;
+                                <br>
+                                &nbsp;&nbsp;<span style="color: blue;">case</span> y:
+                                <br>
+                                &nbsp;&nbsp;&nbsp;<span style="color: green;">// code block</span>
+                                <br>
+                                &nbsp;&nbsp;&nbsp;<span style="color: blue;">break</span>;
+                                <br>
+                                &nbsp;&nbsp;<span style="color:blue">default</span>:
+                                <br>
+                                &nbsp;&nbsp;&nbsp;<span style="color: green;">// code block</span>
+                                <br>
+                              }
+                        </code>
+                    </div>
+                    <p>This is how it works:</p>
+                    <ul>
+                        <li id="inline">The <div class="code2"><code><span style="color: red;">switch</span></code></div> expression is evaluated once</li>
+                        <li id="inline">The value of the expression is compared with the values of each <div class="code2"><code><span style="color: red;">case</span></code></div></li>
+                        <li id="inline">If there is a match, the associated block of code is executed</li>
+                        <li id="inline">The <div class="code2"><code><span style="color: red;">break</span></code></div> and <div class="code2"><code><span style="color: red;">default</span></code></div> keywords are optional, and will be described later in this chapter</li>
+                    </ul>
+                    <p>The example below uses the weekday number to calculate the weekday name:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color: blue;">int</span> day = <span style="color: red;">4</span>;
+                            <br>
+                            <span style="color: blue;">switch</span> (day) {
+                            <br>
+                             &nbsp;&nbsp;<span style="color:blue">case</span> <span style="color: red;">1</span>:
+                                 <br>
+                                 &nbsp;&nbsp;&nbsp;cout << <span style="color:brown">"Monday"</span>;
+                                <br>
+                                 &nbsp;&nbsp;&nbsp;<span style="color: blue;">break</span>;
+                                <br>
+                             &nbsp;&nbsp;<span style="color: blue;">case</span> <span style="color: red;">2</span>:
+                                <br>
+                                 &nbsp;&nbsp;&nbsp;cout << <span style="color:brown">"Tuesday"</span>;
+                                    <br>
+                                 &nbsp;&nbsp;&nbsp;<span style="color: blue;">break</span>;
+                                <br>
+                             &nbsp;&nbsp;<span style="color:blue">case</span> <span style="color: red">3</span>:
+                                <br>
+                                 &nbsp;&nbsp;&nbsp;cout << <span style="color:brown">"Wednesday"</span>;
+                                    <br>
+                                 &nbsp;&nbsp;&nbsp;<span style="color:blue">break</span>;
+                                    <br>
+                             &nbsp;&nbsp;<span style="color: blue;">case</span> <span style="color: red;">4</span>:
+                                <br>
+                                 &nbsp;&nbsp;&nbsp;cout << <span style="color:brown">"Thursday"</span>;
+                                    <br>
+                                 &nbsp;&nbsp;&nbsp;<span style="color: blue;">break</span>;
+                                    <br>
+                             &nbsp;&nbsp;<span style="color: blue;">case</span> <span style="color: red;">5</span>:
+                                <br>
+                                 &nbsp;&nbsp;&nbsp;cout << <span style="color:brown">"Friday"</span>;
+                                    <br>
+                                 &nbsp;&nbsp;&nbsp;<span style="color: blue;">break</span>;
+                                    <br>
+                             &nbsp;&nbsp;<span style="color: blue;">case</span> <span style="color: red;">6</span>:
+                                <br>
+                                 &nbsp;&nbsp;&nbsp;cout << <span style="color:brown">"Saturday"</span>;
+                                    <br>
+                                 &nbsp;&nbsp;&nbsp;<span style="color: blue;">break</span>;
+                                    <br>
+                             &nbsp;&nbsp;<span style="color: blue;">case</span> <span style="color: red;">7</span>:
+                                <br>
+                                 &nbsp;&nbsp;&nbsp;cout << <span style="color:brown">"Sunday"</span>;
+                                    <br>
+                                 &nbsp;&nbsp;&nbsp;<span style="color:blue">break</span>;
+                                    <br>
+                            }
+                            <br>
+                            &nbsp;&nbsp;&nbsp;<span style="color: green;">// Outputs "Thursday" (day 4)</span>
+                        </code>
+                    </div>    
+                </article>
+            </section>
+            <section class="main-section">
+                <header id="C++ Operators">C++ Operators</header>
+                <article>
+                    <p>Operators are used to perform operations on variables and values.</p>
+                    <p id="inline">In the example below, we use the <div class="code2"><code><span style="color: red;">+</span></code></div> <storng>operator</storng> to add together two values:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color: blue;">int</span> x = <span style="color: red;">100</span> + <span style="color: red;">50</span>;
+                        </code>
+                    </div>
+                    <p id="inline">Although the <div class="code2"><code><span style="color: red;">+</span></code></div> operator is often used to add together two values, like in the example above, it can also be used to add together a variable and a value, or a variable and another variable:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color: blue;">int</span> sum1 = <span style="color: red;">100</span> + <span style="color: red;">50</span>;        <span style="color: green;">// 150 (100 + 50)</span>
+                            <br>                                            
+                            <span style="color: blue;">int</span> sum2 = sum1 + <span style="color: red;">250</span>;      <span style="color: green;">// 400 (150 + 250)</span>
+                            <br>
+                            <span style="color: blue">int</span> sum3 = sum2 + sum2;     <span style="color: green;">// 800 (400 + 400)</span>
+                        </code>
+                    </div>
+                    <p>C++ divides the operators into the following groups:</p>
+                    <ul>
+                        <li><a href="#Arithmetic Operators">Arithmetic operators</a></li>
+                        <li><a href="#Assignment Operators">Assignment operators</a></li>
+                        <li><a href="#Comparison Operators">Comparison operators</a></li>
+                        <li><a href="#Logical Operators">Logical operators</a></li>
+                    </ul>
+                    <h3 id="Arithmetic Operators">Arithmetic operators</h3>
+                    <p>Arithmetic operators are used to perform common mathematical operations.</p>
+                    <table class="example-operator-types">
+                        <thead>
+                            <tr>
+                                <th style="width:15%">Operator</th>
+                                <th style="width:15%">Name</th>
+                                <th style="width:50%">Description</th>
+                                <th style="width:20%">Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code><span style="color:red">+</span></code></td>
+                                <td>Addition</td>
+                                <td>Adds together two values</td>
+                                <td>x + y</td>
+                            </tr>
+                            <tr>
+                                <td><code><span style="color:red">-</span></code></td>
+                                <td>Subtraction</td>
+                                <td>Subtracts one value from another</td>
+                                <td>x - y</td>
+                            </tr>
+                            <tr>
+                                <td><span style="color:red">*</span></td>
+                                <td>Multiplication</td>
+                                <td>Multiplies two values</td>
+                                <td>x * y</td>
+                            </tr>
+                            <tr>
+                                <td><span style="color:red">/</span></td>
+                                <td>Division</td>
+                                <td>Divides one value by another</td>
+                                <td>x / y</td>
+                            </tr>
+                            <tr>
+                                <td><span style="color:red">%</span></td>
+                                <td>Modulus</td>
+                                <td>Returns the division remainder</td>
+                                <td>x % y</td>
+                            </tr>
+                            <tr>
+                                <td><span style="color:red">++</span></td>
+                                <td>Increment</td>
+                                <td>Increases the value of a variable by 1</td>
+                                <td>++x</td>
+                            </tr>
+                            <tr>
+                                <td><span style="color:red">--</span></td>
+                                <td>Decrement</td>
+                                <td>Decreases the value of a variable by 1</td>
+                                <td>--x</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <h3 id="Assignment Operators">Assignment Operators</h3>   
+                <p>Assignment operators are used to assign values to variables.</p>
+                <p id="inline">In the example below, we use the <strong>assignment</strong> operator (<div class="code2"><code><span style="color: red;">=</span></code></div>) to assign the value <strong>10</strong> to a variable called <strong>x</strong></p>
+                <h3>Example</h3>
+                <div class="code">
+                    <code>
+                        <span style="color: red;">int</span> x = <span style="color: red;">10</span>;
+                    </code>
+                </div>
+                <p id="inline">The <strong>addition assignment</strong> operator (<div class="code2"><code><span style="color: red;">+=</span></code></div>) adds a value to a variable:</p>
+                <h3>Example</h3>
+                <div class="code">
+                    <code>
+                        <span style="color: blue;">int</span> x = <span style="color: red;">10</span>;
+                        x += <span style="color: red;">5</span>;
+                    </code>
+                </div>
+                <p>A list of all assignment operators:</p>
+                <table class="example-operator-assignment-types">
+                    <thead>
+                        <tr>
+                            <th style="width:30%">Operator</th>
+                            <th style="width:30%">Example</th>
+                            <th style="width:40%">Same As</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code><span style="color:red">=</span></code></td>
+                            <td>x = 5</td>
+                            <td>x = 5</td>
+                        </tr>
+                        <tr>
+                            <td><code><span style="color:red">+=</span></code></td>
+                            <td>x += 3</td>
+                            <td>x = x + 3</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red">-=</span></td>
+                            <td>x -= 3</td>
+                            <td>x = x - 3</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red">*=</span></td>
+                            <td>x *= 3</td>
+                            <td>x = x * 3</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red">/=</span></td>
+                            <td>x /= 3</td>
+                            <td>x = x / 3</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red">%=</span></td>
+                            <td>x %= 3</td>
+                            <td>x = x % 3</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red">&=</span></td>
+                            <td>x &= 3</td>
+                            <td>x = x & 3</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red">|=</span></td>
+                            <td>x |= 3</td>
+                            <td>x = x | 3</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red">^=</span></td>
+                            <td>x ^= 3</td>
+                            <td>x = x ^ 3</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red">>>=</span></td>
+                            <td>x >>= 3</td>
+                            <td>x = x >> 3</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red"><<=</span></td>
+                            <td>x <<= 3</td>
+                            <td>x = x << 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3 id="Comparison Operators">Comparison Operators</h3>
+                <p>Comparison operators are used to compare two values (or variables). This is important in programming, because it helps us to find answers and make decisions.</p>
+                <p id="inline">The return value of a comparison is either <div class="code2"><code><span style="color: red;">1</span></code></div> or <div class="code2"><code><span style="color: red;">0</span></code></div>, which means <strong>true</strong> (1) or <strong>false</strong> (0). These values are known as <strong>Boolean values</strong>.</p>
+                <p id="inline">In the following example, we use the <strong>greater than</strong> operator (<div class="code2"><code><span style="color: red;">></span></code></div>) to find out if 5 is greater than 3:</p>
+                <h3>Example</h3>
+                <div class="code">
+                    <code>
+                        <span style="color: blue;">int</span> x = <span style="color: red;">5</span>;
+                        <span style="color: blue;">int</span> y = <span style="color: red;">3</span>;
+                        cout << (x > y); <span style="color: green;">// returns 1 (true) because 5 is greater than 3</span>
+                    </code>
+                </div>
+                <p>A list of all comparison operators:</p>
+                <table class="example-operator-comparison-types">
+                    <thead>
+                        <tr>
+                            <th style="width:30%">Operator</th>
+                            <th style="width:30%">Name</th>
+                            <th style="width:40%">Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code><span style="color:red">==</span></code></td>
+                            <td>Equal to</td>
+                            <td>x == y</td>
+                        </tr>
+                        <tr>
+                            <td><code><span style="color:red">!=</span></code></td>
+                            <td>Not equal</td>
+                            <td>x != y</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red">></span></td>
+                            <td>Greater than</td>
+                            <td>x > y</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red"><</span></td>
+                            <td>Less than</td>
+                            <td>x < y</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red">>=</span></td>
+                            <td>Greater than or equal to</td>
+                            <td>x >= y</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red"><=</span></td>
+                            <td>Less than or equal to</td>
+                            <td>x <= y</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3 id="Logical Operators">Logical Operators</h3>
+                <p id="inline">As with <a href="#Comparison Operators">comparison operators</a>, you can also test for <strong>true</strong> (<div class="code2"><code><span style="color: red;">1</span></code></div>) or <strong>false</strong> (<div class="code2"><code><span style="color: red;">0</span></code></div>) values with <strong>logical operators</strong>.</p>
+                <p>Logical operators are used to determine the logic between variables or values:</p>
+                <table class="example-operator-logical-types">
+                    <thead>
+                        <tr>
+                            <th style="width:15%">Operator</th>
+                            <th style="width:15%">Name</th>
+                            <th style="width:50%">Description</th>
+                            <th style="width:20%">Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code><span style="color:red">&& </span></code></td>
+                            <td>Logical and</td>
+                            <td>Returns true if both statements are true</td>
+                            <td>x < 5 &&  x < 10</td>
+                        </tr>
+                        <tr>
+                            <td><code><span style="color:red">|| </span></code></td>
+                            <td>Logical or</td>
+                            <td>Returns true if one of the statements is true</td>
+                            <td>x < 5 || x < 4</td>
+                        </tr>
+                        <tr>
+                            <td><span style="color:red">!</span></td>
+                            <td>Logical not</td>
+                            <td>Reverse the result, returns false if the result is true</td>
+                            <td>!(x < 5 && x < 10)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </article>
+            </section>
+            <section class="main-section">
+                <header id="C++ Strings">C++ Strings</header>
+                <article>
+                    <p id="Strings">Strings are used for storing text.</p>
+                    <p id="inline">A <div class="code2"><code><span style="color: red;">string</span></code></div> variable contains a collection of characters surrounded by double quotes:</p>
+                    <h3>Example</h3>
+                    <p id="inline">Create a variable of type <div class="code2"><code><span style="color: red;">string</span></code></div> and assign it a value:</p>
+                    <div class="code">
+                        <code>
+                            string greeting = <span style="color: brown;">"Hello"</span>;
+                        </code>
+                    </div>
+                    <p id="inline">To use strings, you must include an additional header file in the source code, the <div class="code2"><code><span style="color: red;"><string></span></code></div> library:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color: green;">// Include the string library</span>
+                            <br>
+                            #include <string>
+                            <br>
+                            <br>    
+                            <span style="color: green;">// Create a string variable</span>
+                            <br>
+                            string greeting = <span style="color: brown;">"Hello"</span>;
+                        </code>
+                    </div>
+                    <h3 id="String Concatenation">String Concatenation</h3>
+                    <p id="inline">The <div class="code2"><code><span style="color: red;">+</span></code></div> operator can be used between strings to add them together to make a new string. This is called <strong>concatenation</strong>:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            string firstName = <span style="color: brown;">"John "</span>;
+                            <br>
+                            string lastName = <span style="color: brown;">"Doe"</span>;
+                            <br>
+                            string fullName = firstName + lastName;
+                            <br>
+                            cout << fullName;
+                        </code>
+                    </div>
+                    <p id="inline">In the example above, we added a space after firstName to create a space between John and Doe on output. However, you could also add a space with quotes (<div class="code2"><code><span style="color: red;">" "</span></code></div> or <div class="code2"><code><span style="color: red;">' '</span></code></div>):</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            string firstName = <span style="color: brown;">"John"</span>;
+                            <br>
+                            string lastName = <span style="color: brown;">"Doe"</span>;
+                            <br>
+                            string fullName = firstName + <span style="color: brown;">" "</span> + lastName;
+                            <br>
+                            cout << fullName;
+                        </code>
+                    </div>
+                    <h3 id="String Length">String Length</h3>
+                    <p id="inline">To get the length of a string, use the <div class="code2"><code><span style="color: red;">length()</span></code></div> function:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            string txt = <span style="color: brown;">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>;
+                            <br>
+                            cout << <span style="color= brown">"The length of the txt string is: "</span> << txt.length();
+                        </code>
+                    </div>
+                    <p id="inline"><stron>Tip:</stron> You might see some C++ programs that use the <div class="code2"><code><span style="color: red;">size()</span></code></div> function to get the length of a string. This is just an alias of <div class="code2"><code><span style="color: red;">length()</span></code></div>. It is completely up to you if you want to use <div class="code2"><code><span style="color: red;">length()</span></code></div> or <div class="code2"><code><span style="color: red;">size()</span></code></div>:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            string txt = <span style="color: brown;">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>;
+                            <br>
+                            cout << <span style="color= brown">"The length of the txt string is: "</span> << txt.size();
+                        </code>
+                    </div>
+                    <h3 id="Access Strings">Access Strings</h3>
+                    <p id="inline">You can access the characters in a string by referring to its index number inside square brackets <div class="code2"><code><span style="color: red;">[]</span></code></div>.</p>
+                    <p>This example prints the <strong>first character</strong> in <strong>myString</strong>:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            string myString = <span style="color: brown;">"Hello"</span>;
+                            <br>
+                            cout << myString[<span style="color: red">0</span>];
+                            <br>
+                            <span style="color: green;">// Outputs H</span>
+                        </code>
+                    </div>
+                    <p>This example prints the <strong>second character</strong> in <strong>myString</strong>:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            string myString = <span style="color: brown;">"Hello"</span>;
+                            <br>
+                            cout << myString[<span style="color: red">1</span>];
+                            <br>
+                            <span style="color: green;">// Outputs e</span>
+                        </code>
+                    </div>
+                    <h3>Change String Characters</h3>
+                    <p>To change the value of a specific character in a string, refer to the index number, and use single quotes:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            string myString = <span style="color: brown;">"Hello"</span>;
+                            <br>
+                            myString[0] = <span style="color: brown;">'J'</span>;
+                            <br>
+                            cout << myString;
+                            <br>
+                            <span style="color: green;">// Outputs Jello instead of Hello</span>
+                        </code>
+                    </div>
+                    <h3 id="User Input Strings">User Input Strings</h3>
+                    <p id="inline">It is possible to use the extraction operator <div class="code2"><code><span style="color: red;">>></span></code></div> on <div class="code2"><code><span style="color: red">cin</span></code></div> to store a string entered by a user:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            string firstName;
+                            <br>
+                            cout << <span style="color: brown">"Type your first name: "</span>;
+                            <br>
+                            cin >> firstName; <span style="color: green;">// get user input from the keyboard</span>
+                            <br>
+                            cout << <span style="color: brown">"Your name is: "</span> << firstName;
+                            <br>
+                            <br>
+                            <span style="color: green">// Type your first name: John</span>
+                            <br>
+                            <span style="color: green;">// Your name is: John</span>
+                        </code>
+                    </div>
+                    <p id="inline">However, <div class="code2"><code><span style="color: red;">cin</span></code></div> considers a space (whitespace, tabs, etc) as a terminating character, which means that it can only store a single word (even if you type many words):</p>
+                    <p>From the example above, you would expect the program to print "John Doe", but it only prints "John".</p>
+                    <p id="inline">That's why, when working with strings, we often use the <div class="code2"><code><span style="color: red;">getline()</span></code></div> function to read a line of text. It takes <div class="code2"><code><span style="color: red;">cin</span></code></div> as the first parameter, and the string variable as second:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            string fullName;
+                            <br>
+                            cout << <span style="color: brown">"Type your full name: "</span>;
+                            <br>
+                            getline (cin, fullName);
+                            <br>
+                            cout << <span style="color: brown">"Your name is: "</span> << fullName;
+                            <br>
+                            <br>
+                            <span style="color: green;">// Type your full name: John Doe</span>
+                            <br>
+                            <span style="color: green;">// Your name is: John Doe</span>
+                        </code>
+                    </div>
+                </article>
+            </section>
+            <section class="main-section">
+                <header id="C++ Math">C++ Math</header>
+                <article>   
+                    <p>C++ has many functions that allows you to perform mathematical tasks on numbers.</p>
+                    <h3>Max and min</h3>
+                    <p id="inline">The <div class="code2"><code><span style="color: red;">max(x,y)</span></code></div> function can be used to find the highest value of <i>x</i> and <i>y</i>:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            cout << max(<span style="color: red">5</span>, <span style="color: red;">10</span>);
+                        </code>
+                    </div>
+                    <p id="inline">And the <span style="color: red;">min(x,y)</span> function can be used to find the lowest value of <i>x</i> and <i>y</i>:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            cout << min(<span style="color: red">5</span>, <span style="color: red;">10</span>);
+                        </code>
+                    </div>
+                    <h3>C++ <cmath> Header</h3>
+                    <p id="inline">Other functions, such as <div class="code2"><code><span style="color: red;">sqrt</span></code></div> (square root), <div class="code2"><code><span style="color: red;">round</span></code></div> (rounds a number) and <div class="code2"><code><span style="color: red;">log</span></code></div> (natural logarithm), can be found in the <div class="code2"><code><span style="color: red;"><cmath></span></code></div> header file:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color: green;">// Include the cmath library</span>
+                            <br>
+                            #include <cmath>
+                            <br>
+                            <br>    
+                            cout << sqrt(<span style="color: red;">64</span>);
+                            <br>
+                            cout << round(<span style="color: red;">2.6</span>);
+                            <br>
+                            cout << log(<span style="color: red;">2</span>);
+                        </code>
+                    </div>
+                    <h3>Other Math Functions</h3>
+                    <p id="inline">A list of other popular Math functions (from the <div class="code2"><code><span style="color: red;"><cmath></span></code></div> library) can be found in the table below:</p>
+                        <table class="example-cmath-types">
+                            <thead>
+                                <tr>
+                                    <th style="width:35%">Function</th>
+                                    <th style="width:65%">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code><span style="color:red">abs(x) </span></code></td>
+                                    <td>Returns the absolute value of x</td>
+                                </tr>
+                                <tr>
+                                    <td><code><span style="color:red">pow(x, y) </span></code></td>
+                                    <td>Returns the value of x to the power of y</td>
+                                </tr>
+                                <tr>
+                                    <td><span style="color:red">sin(x)</span></td>
+                                    <td>Returns the sine of x (x is in radians)</td>
+                                </tr>
+                                <tr>
+                                    <td><code><span style="color: red;">cos(x)</span></code></td>
+                                    <td>Returns the cosine of x</td>
+                                </tr>
+                                <tr>
+                                    <td><code><span style="color: red;">tan(x)</span></code></td>
+                                    <td>Returns the tangent of an angle</td>
+                                </tr>
+                            </tbody>
+                        </table>   
+                </article> 
+            </section>
+            <section class="main-section">
+                <header id="C++ Structures">C++ Structures</header>
+                <article>
+                    <p>Structures (also called structs) are a way to group several related variables into one place. Each variable in the structure is known as a <strong>member</strong> of the structure.</p>
+                    <h3>Create a Structure</h3>
+                    <p>To create a structure, use the <div class="code2"><code><span style="color: red;">struct</span></code></div> keyword and declare each of its members inside curly braces.</p>
+                    <p>After the declaration, specify the name of the structure variable (<strong>myStructure</strong> in the example below):</p>
+                    <div class="code">
+                        <code>
+                            struct {             <span style="color: green;">// Structure declaration</span>
+                                <br>
+                               &nbsp;&nbsp;<span style="color: blue;">int</span> myNum;         <span style="color: green;">// Member (int variable)</span>
+                                <br>
+                                &nbsp; &nbsp;string myString;   <span style="color: green;">// Member (string variable)</span>
+                                <br>
+                            } myStructure;       <span style="color: green;">// Structure variable</span>
+                        </code>
+                    </div>
+                    <h3>Access Structure Members</h3>
+                    <p id="inline">To access members of a structure, use the dot syntax (<div class="code2"><code><span style="color: red;">.</span></code></div>):</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color: green;">// Create a structure variable called myStructure</span>
+                            <br>
+                            struct {
+                            <br>
+                            &nbsp;&nbsp;<span style="color: blue;">int</span> myNum;
+                            <br>
+                            &nbsp;&nbsp;string myString;
+                            <br>
+                            } myStructure;
+                            <br>
+                            <br>
+                            <span style="color: green;">// Assign values to members of myStructure</span>
+                            <br>
+                            myStructure.myNum = <span style="color: red;">1</span>;
+                            <br>
+                            myStructure.myString = <span style="color: brown;">"Hello World!"</span>;
+                            <br>
+                            <br>
+                            <span style="color: green;">// Print members of myStructure</span>
+                            <br>
+                            cout << myStructure.myNum << <span style="color:brown">"\n"</span>;
+                            <br>
+                            cout << myStructure.myString << <span style="color:brown">"\n"</span>;
+                        </code>
+                    </div>
+                    <h3>One Structure in Multiple Variables</h3>
+                    <p id="inline">You can use a comma (<div class="code2"><code><span style="color: red;">,</span></code></div>) to use one structure in many variables:</p>
+                    <div class="code">
+                        <code>
+                            struct {
+                                <br>
+                                <span style="color: blue;">int</span> myNum;
+                                <br>
+                                string myString;
+                                <br>
+                            } myStruct1, myStruct2, myStruct3; <span style="color: green;">// Multiple structure variables separated with commas</span>
+                        </code>
+                    </div>
+                    <p>This example shows how to use a structure in two different variables:</p>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            struct {
+                                <br>
+                                &nbsp;&nbsp;string brand;
+                                <br>
+                                &nbsp;&nbsp;string model;
+                                <br>
+                                <span style="color: blue;">int</span> year;
+                            } myCar1, myCar2; <span style="color: green;">// We can add variables by separating them with a comma here</span>
+                              <br>
+                              <br>
+                              <span style="color: green;">// Put data into the first structure</span>
+                              <br>
+                              myCar1.brand = <span style="color: brown;">"BMW"</span>;
+                              <br>
+                              myCar1.model = <span style="color: brown;">"X5"</span>;
+                              <br>
+                              myCar1.year = <span style="color: red;">1999</span>;
+                              <br>
+                              <br>
+                              <span style="color: green;">// Put data into the second structure</span>
+                              <br>
+                              myCar2.brand = <span style="color: brown;">"Ford"</span>;
+                              <br>
+                              myCar2.model = <span style="color: brown;">"Mustang"</span>;
+                              <br>
+                              myCar2.year = <span style="color: red;">1969</span>;
+                              <br>
+                              <br>
+                              <span style="color: green;">// Print the structure members</span>
+                              <br>
+                              cout << myCar1.brand << <span style="color:brown">" "</span> << myCar1.model << <span style="color:brown">" "</span> << myCar1.year << <span style="color:brown">"\n"</span>;
+                              <br>
+                              cout << myCar2.brand << <span style="color:brown">" "</span> << myCar2.model << <span style="color:brown">" "</span> << myCar2.year << <span style="color:brown">"\n"</span>;
+                        </code>
+                    </div>
+                    <h3>Named Structures</h3>
+                    <p>By giving a name to the structure, you can treat it as a data type. This means that you can create variables with this structure anywhere in the program at any time.</p>
+                    <p id="inline">To create a named structure, put the name of the structure right after the <div class="code2"><code><span style="color: red;">struct</span></code></div> keyword:</p>
+                    <div class="code">
+                        <code>
+                            struct myDataType { <span style="color: green;">// This structure is named "myDataType"</span>
+                            <br>
+                            &nbsp;&nbsp;<span style="color: blue;">int</span> myNum;
+                            <br>
+                            &nbsp;&nbsp;string myString;
+                            <br>
+                            };
+                        </code>
+                    </div>
+                    <p>To declare a variable that uses the structure, use the name of the structure as the data type of the variable:</p>
+                    <div class="code">
+                        <code>myDataType myVar;</code>
+                    </div>
+                    <h3>Example</h3>
+                    <div class="code">
+                        <code>
+                            <span style="color: green;">// Declare a structure named "car"</span>
+                            <br>
+                            struct car 
+                            <br>
+                            &nbsp;&nbsp;string brand;
+                                <br>
+                            &nbsp;&nbsp;string model;
+                                <br>
+                            &nbsp;&nbsp;<span style="color: blue;">int</span> year;
+                            <br>
+                            };
+                            <br>
+                            <br>
+                            <span style="color: blue;">int</span> main() {
+                                <br>
+                                &nbsp;&nbsp;<span style="color: green;">// Create a car structure and store it in myCar1;</span>
+                            <br>
+                            &nbsp;&nbsp;car myCar1;
+                            <br>
+                            &nbsp;&nbsp;myCar1.brand = <span style="color: brown;">"BMW"</span>;
+                            <br>
+                            &nbsp;&nbsp;myCar1.model = <span style="color: brown;">"X5"</span>;
+                            <br>
+                            &nbsp;&nbsp;myCar1.year = <span style="color: brown;">1999</span>;
+                            <br>
+                            <br>    
+                            &nbsp;&nbsp;<span style="color: green;">// Create another car structure and store it in myCar2;</span>
+                            <br>
+                            &nbsp;&nbsp;car myCar2;
+                            <br>
+                            &nbsp;&nbsp;myCar2.brand = <span style="color: brown;">"Ford"</span>;
+                            <br>
+                            &nbsp;&nbsp;myCar2.model = <span style="color: brown;">"Mustang"</span>;
+                            <br>
+                            &nbsp;&nbsp;myCar2.year = <span style="color: red;">1969</span>;
+                            <br>
+                            <br>
+                            &nbsp;&nbsp;<span style="color: green;">// Print the structure members</span>
+                            <br>
+                            &nbsp;&nbsp;cout << myCar1.brand << <span style="color: brown">" "</span> << myCar1.model << <span style="color: brown">" "</span> << myCar1.year << <span style="color:brown">"\n"</span>;
+                            <br>
+                            &nbsp;&nbsp;cout << myCar2.brand << <span style="color: brown">" "</span> << myCar2.model << <span style="color: brown">" "</span> << myCar2.year << <span style="color:brown">"\n"</span>;
+                            <br>
+                            <br>
+                            &nbsp;&nbsp;<span style="color: blue;">return</span> <span style="color: red;">0</span>;
+                            <br>
+                            }
+                        </code>
+                    </div>
+                </article> 
+            </section>
+            <section class="main-section">
+                <h1 id="Reference">Reference</h1>
+                <article>
+                    <ul>
+                        <li>All the documentation in this page is taken from<a href="https://www.w3schools.com/cpp/default.asp"> W3schools</a></li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>

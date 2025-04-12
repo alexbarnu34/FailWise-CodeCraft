@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infoliceanul</title>
+    <link rel="stylesheet" href="first_file.css">
+    <script src="https://kit.fontawesome.com/39f3f4fa82.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#">Home</a>
+        <a href="#introducere">Introducere</a>
+        <div class="dropdown">
+            <a href="#" class="button">Lecti</a>
+            <div class="dropdown-content">
+                <a href="c++_documentation.html">C++</a>
+                <a href="#">PHP</a>
+                <a href="#">Python</a>
+            </div>
+        </div>
+        <a href="#myDIV">To do list</a>
+    </div>
+      <div class="body-container">
+        <div class="container-infoliceanu .w3-padding-large">
+            <span class="titlu"><i class="fa fa-bullseye" aria-hidden="true"></i>FailWise CodeCraft </span>
+        </div>
+    </div>
+    <h3>INTRODUCERE</h3>
+    <em>Nu am dat greş. Pur şi simplu am descoperit 10.000 de idei care nu funcţionează.-Thomas Edison </em>
+    <div id="introducere">
+        <p>Bine ați venit pe pagina noastră dedicată pasionaților de informatică și celor curioși să exploreze tehnologia digitală! Scopul nostru este să influențăm și să inspirăm tinerii de liceu și pe cei fără experiență în informatică să învețe și să se dezvolte liber. 
+            Aici, încurajăm creativitatea, curiozitatea și spiritul de explorare, oferind resurse și suport pentru a învăța prin experimentare și pentru a transforma fiecare greșeală într-o oportunitate de creștere personală.
+            Prin comunitatea noastră, construim un mediu în care fiecare pas este un pas către o lume digitală mai conectată și mai inclusivă. Să începem această călătorie împreună, să explorăm și să ne dezvoltăm în lumea informaticii!</p>
+    </div>
+    <p class="lecti">Acest curs acoperă în prezent:</p>
+    <p>C++</p>
+    <div class="container">
+    <div class="skills c">100%</div>
+    </div>
+
+    <p>PHP</p>
+    <div class="container">
+    <div class="skills php">0%</div>
+    </div>
+
+    <p>Python</p>
+    <div class="container">
+    <div class="skills py">0%</div>
+    </div>
+
+    <div id="myDIV" class="header">
+        <h2>My To Do List</h2>
+        <input type="text" id="myInput" placeholder="Title...">
+        <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+
+    <ul id="myUL">
+        <li>Sa invat tipuri de variabile</li>
+        <li class="checked">Sa invat instructiuni</li>
+        <li>Sa invat precedenta operatorilor</li>
+        <li>Sa invat Structuri</li>
+    </ul> 
+    <script>
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        myNodelist[i].appendChild(span);
+        }
+
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+        }
+        }
+
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function(ev) {
+        if (ev.target.tagName === 'LI') {
+            ev.target.classList.toggle('checked');
+        }
+        }, false);
+
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("myInput").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === '') {
+            alert("You must write something!");
+        } else {
+            document.getElementById("myUL").appendChild(li);
+        }
+        document.getElementById("myInput").value = "";
+
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        li.appendChild(span);
+
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+            }
+        }
+        }
+    </script>
+</body>
+</html>
+

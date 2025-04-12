@@ -1,0 +1,530 @@
+body{
+    background-color: #6d071a;
+    font-family: Verdana, sans-serif;
+}
+
+#title-bar h1{
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Open Sans', Arial, sans-serif;
+    
+}
+
+header{
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: aliceblue;
+    font-size: 1.8em;
+    border-bottom: solid;
+    border-color: aliceblue;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    padding-top: 3%;
+}
+
+#navbar{
+    position: fixed;
+    min-width: 290px;
+    top: 0%;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    border-right: solid;
+    border-color:  aliceblue;
+    background-color: #333;;
+}
+
+#navbar > ul{
+    list-style-type: none;
+    padding: 0%;
+    margin-top: 3%;
+    height: 88%;
+}
+
+#navbar a{
+    text-decoration: none;
+}
+
+#navbar >ul > li:first-of-type{
+    padding-top: 0%;
+}
+
+#navbar > ul >li{
+    color:aliceblue;
+    font-family: 'Open Sans', Arial, sans-serif;
+    border-bottom: solid;
+    border-color: aliceblue;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    padding-top: 3%;
+
+}
+
+#title-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 45%;
+    padding-right: 5%;
+}
+
+#titlebar >ul > li{
+    display: inline;
+    color:aliceblue;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.main-section h1{
+    color: aliceblue;
+    font-family: 'Open Sans';
+}
+
+.main-section h2{
+    color: aliceblue;
+    font-family: 'Open Sans';
+}
+
+.information{
+    margin-left:20%;
+}
+
+section article{
+    margin: 15px;
+    font-size: 0.96em;
+    color: aliceblue;
+}
+
+.code{
+    margin-left: 2%;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.code2{
+    background-color: black;
+    border-radius: 5px;
+    width: 4%;
+    display: inline;
+    margin-left: 0%;
+}
+
+.section{
+    display: inline;
+}
+
+#inline{
+    display: inline;
+}
+
+.example-data-types th:first-of-type,.example-data-types td:first-of-type{
+    width:15%;
+}
+
+.example-data-types th:nth-child(2),.example-data-types td:nth-child(2){
+    width: 15%;
+}
+
+.example-data-types th:nth-child(3),.example-data-types td:nth-child(3){
+    width: 70%;
+}
+
+.example-data-types th{
+    text-align: left;
+    padding: 8px;
+    border:solid;
+}
+
+.example-data-types td{
+    display:table-cell;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px;
+    border:solid;
+}
+
+.example-data-types{
+    border-collapse:collapse;
+}
+
+.example-data-types thead > tr:first-of-type{
+    background-color: #45455e;
+}
+
+.example-data-types tbody > tr:first-of-type{
+    background-color: #64647d;
+}
+
+.example-data-types tr:nth-child(2){
+    background-color: #45455e;
+}
+
+.example-data-types tr:nth-child(3){
+    background-color: #64647d;
+}
+
+.example-data-types tr:nth-child(4){
+    background-color: #45455e;
+}
+
+.example-data-types tr:nth-child(5){
+    background-color: #64647d;
+}
+
+a:visited{
+    color: white;
+}
+
+a{
+    color:white;
+}
+
+.dropdown {
+    position: relative;
+    display: block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+
+  .example-operator-types td{
+    display:table-cell;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px;
+    border:solid;
+}
+
+.example-operator-types th{
+    text-align: left;
+    padding: 8px;
+    border:solid;
+}
+
+.example-operator-types{
+    border-collapse:collapse;
+}
+
+.example-operator-types th:first-of-type,.example-operator-types td:first-of-type{
+    width:15%;
+}
+
+.example-operator-types th:nth-child(2),.example-operator-types td:nth-child(2){
+    width: 15%;
+}
+
+.example-operator-types th:nth-child(3),.example-operator-types td:nth-child(3){
+    width: 50%;
+}
+.example-operator-types th:nth-child(3),.example-operator-types td:nth-child(3){
+    width: 20%;
+}
+
+.example-operator-types thead > tr:first-of-type{
+    background-color: #45455e;
+}
+
+.example-operator-types tbody > tr:first-of-type{
+    background-color: #64647d;
+}
+
+.example-operator-types tr:nth-child(2){
+    background-color: #45455e;
+}
+
+.example-operator-types tr:nth-child(3){
+    background-color: #64647d;
+}
+
+.example-operator-types tr:nth-child(4){
+    background-color: #45455e;
+}
+
+.example-operator-types tr:nth-child(5){
+    background-color: #64647d;
+}
+
+.example-operator-types tr:nth-child(6){
+    background-color: #45455e;
+}
+
+.example-operator-types tr:nth-child(7){
+    background-color: #64647d;
+}
+
+.example-operator-assignment-types td{
+    display:table-cell;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px;
+    border:solid;
+}
+
+.example-operator-assignment-types th{
+    text-align: left;
+    padding: 8px;
+    border:solid;
+}
+
+.example-operator-assignment-types{
+    border-collapse:collapse;
+}
+
+.example-operator-assignment-types th:first-of-type,.example-operator-assignment-types td:first-of-type{
+    width:30%;
+}
+
+.example-operator-assignment-types th:nth-child(2),.example-operator-assignment-types td:nth-child(2){
+    width: 30%;
+}
+
+.example-operator-assignment-types th:nth-child(3),.example-operator-assignment-types td:nth-child(3){
+    width: 40%;
+}
+.example-operator-assignment-types thead > tr:first-of-type{
+    background-color: #45455e;
+}
+
+.example-operator-assignment-types tbody > tr:first-of-type{
+    background-color: #64647d;
+}
+
+.example-operator-assignment-types tr:nth-child(2){
+    background-color: #45455e;
+}
+
+.example-operator-assignment-types tr:nth-child(3){
+    background-color: #64647d;
+}
+
+.example-operator-assignment-types tr:nth-child(4){
+    background-color: #45455e;
+}
+
+.example-operator-assignment-types tr:nth-child(5){
+    background-color: #64647d;
+}
+
+.example-operator-assignment-types tr:nth-child(6){
+    background-color: #45455e;
+}
+
+.example-operator-assignment-types tr:nth-child(7){
+    background-color: #64647d;
+}
+
+.example-operator-assignment-types tr:nth-child(8){
+    background-color: #64647d;
+}
+
+.example-operator-assignment-types tr:nth-child(9){
+    background-color: #45455e;
+}
+
+.example-operator-assignment-types tr:nth-child(10){
+    background-color: #64647d;
+}
+
+.example-operator-assignment-types tr:nth-child(11){
+    background-color: #45455e;
+}
+
+.example-operator-assignment-types tr:nth-child(12){
+    background-color: #64647d;
+}
+
+.example-operator-comparison-types td{
+    display:table-cell;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px;
+    border:solid;
+}
+
+.example-operator-comparison-types th{
+    text-align: left;
+    padding: 8px;
+    border:solid;
+}
+
+.example-operator-comparison-types{
+    border-collapse:collapse;
+}
+
+.example-operator-comparison-types th:first-of-type,.example-operator-comparison-types td:first-of-type{
+    width:30%;
+}
+
+.example-operator-comparison-types th:nth-child(2),.example-operator-comparison-types td:nth-child(2){
+    width: 30%;
+}
+
+.example-operator-comparisont-types th:nth-child(3),.example-operator-comparison-types td:nth-child(3){
+    width: 40%;
+}
+.example-operator-comparison-types thead > tr:first-of-type{
+    background-color: #45455e;
+}
+
+.example-operator-comparison-types tbody > tr:first-of-type{
+    background-color: #64647d;
+}
+
+.example-operator-comparison-types tr:nth-child(2){
+    background-color: #45455e;
+}
+
+.example-operator-comparison-types tr:nth-child(3){
+    background-color: #64647d;
+}
+
+.example-operator-comparison-types tr:nth-child(4){
+    background-color: #45455e;
+}
+
+.example-operator-comparison-types tr:nth-child(5){
+    background-color: #64647d;
+}
+
+.example-operator-comparison-types tr:nth-child(6){
+    background-color: #45455e;
+}
+
+.example-operator-logical-types td{
+    display:table-cell;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px;
+    border:solid;
+}
+
+.example-operator-logical-types th{
+    text-align: left;
+    padding: 8px;
+    border:solid;
+}
+
+.example-operator-logical-types{
+    border-collapse:collapse;
+}
+
+.example-operator-logical-types th:first-of-type,.example-operator-logical-types td:first-of-type{
+    width:15%;
+}
+
+.example-operator-logical-types th:nth-child(2),.example-operator-logical-types td:nth-child(2){
+    width: 15%;
+}
+
+.example-operator-logical-types th:nth-child(3),.example-operator-logical-types td:nth-child(3){
+    width: 50%;
+}
+
+.example-operator-logical-types th:nth-child(4),.example-operator-logical-types td:nth-child(4){
+    width: 20%;
+}
+
+.example-operator-logical-types thead > tr:first-of-type{
+    background-color: #45455e;
+}
+
+.example-operator-logical-types tbody > tr:first-of-type{
+    background-color: #64647d;
+}
+
+.example-operator-logical-types tr:nth-child(2){
+    background-color: #45455e;
+}
+
+.example-operator-logical-types tr:nth-child(3){
+    background-color: #64647d;
+}
+
+.example-cmath-types td{
+    display:table-cell;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px;
+    border:solid;
+}
+
+.example-cmath-types th{
+    text-align: left;
+    padding: 8px;
+    border:solid;
+}
+
+.example-cmath-types{
+    border-collapse:collapse;
+}
+
+.example-cmath-types th:first-of-type,.example-cmath-types td:first-of-type{
+    width: 23%;
+}
+
+.example-cmath-types th:nth-child(2),.example-cmath-types td:nth-child(2){
+    width: 77%;
+}
+
+.example-cmath-types thead > tr:first-of-type{
+    background-color: #45455e;
+}
+
+.example-cmath-types tbody > tr:first-of-type{
+    background-color: #64647d;
+}
+
+.example-cmath-types tr:nth-child(2){
+    background-color: #45455e;
+}
+
+.example-cmath-types tr:nth-child(3){
+    background-color: #64647d;
+}
+
+.example-cmath-types tr:nth-child(4){
+    background-color: #45455e;
+}
+
+.example-cmath-types tr:nth-child(5){
+    background-color: #64647d;
+}
+
+.example-cmath-types tr:nth-child(6){
+    background-color: #45455e;
+}
+
+.example-cmath-types tr:nth-child(7){
+    background-color: #64647d;
+}
+
+.example-cmath-types tr:nth-child(8){
+    background-color: #45455e;
+}
+
+.example-cmath-types tr:nth-child(9){
+    background-color: #64647d;
+}
+
+.example-cmath-types tr:nth-child(10){
+    background-color: #45455e;
+}
+
+.example-cmath-types tr:nth-child(11){
+    background-color: #64647d;
+}
